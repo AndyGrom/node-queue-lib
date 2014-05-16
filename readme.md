@@ -21,7 +21,7 @@ Simple Usages
 -------------
 
 ```javascript
-var Queue = require('../lib/queue.client.js');
+var Queue = require('node-queue-lib');
 
 var url = 'http://localhost';
 
@@ -47,9 +47,9 @@ Inter process usages
 server message queue:
 
 ```javascript
-var SocketIoBridgeServer = require('../lib/net/socket-io-bridge-server');
+var SocketIoBridgeServer = require('node-queue-lib/lib/net/socket-io-bridge-server');
 var http = require('http');
-var QueueServer = require('../lib/node-queue-server');
+var QueueServer = require('node-queue-lib/lib/core/node-queue-server');
 
 // TCP port for incoming connections
 var port = 80;
