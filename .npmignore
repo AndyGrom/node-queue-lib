@@ -1,0 +1,11 @@
+*.njsproj
+*.sln
+*.suo
+*.bak
+.idea
+publish.cmd
+unpublish.cmd
+node_modules
+coverage
+.idea
+.grunt

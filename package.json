@@ -1,0 +1,43 @@
+{
+  "name": "node-queue-lib",
+  "description": "Javascript implementation of message queue with various delivery strategy",
+  "version": "0.0.4",
+  "author": "Gromozdov Andrey Alexandrovich",
+  "main": "lib/queue.client.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andygrom/node-queue-lib.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/AndyGrom/node-queue-lib/blob/master/LICENSE.TXT"
+    }
+  ],
+  "keywords": [
+    "message", "queue"
+  ],
+  "dependencies": {
+    "socket.io-client": "^0.9.16",
+    "socket.io": "^0.9.16",
+    "node-uuid": "^1.4.1"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "browserify": "^3.46.0",
+    "grunt-browserify": "^2.0.8",
+    "grunt-jasmine-node": "^0.2.1",
+    "grunt-jasmine-node-coverage": "^0.1.10",
+    "mime": "^1.2.11",
+    "phantomjs": "^1.9.7-5",
+    "colors": "^0.6.2",
+    "grunt-markdown": "^0.5.0"
+  },
+  "homepage": "https://github.com/AndyGrom/node-queue",
+  "scripts": {}
+}
