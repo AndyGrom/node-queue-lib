@@ -1,17 +1,17 @@
 {
   "name": "node-queue-lib",
   "description": "Javascript implementation of message queue with various delivery strategy",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Gromozdov Andrey Alexandrovich",
   "main": "lib/queue.client.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/andygrom/node-queue-lib.git"
+    "url": "git://github.com/AndyGrom/node-message-queue.git"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/AndyGrom/node-queue-lib/blob/master/LICENSE.TXT"
+      "url": "https://github.com/AndyGrom/node-message-queue/blob/master/LICENSE.TXT"
     }
   ],
   "keywords": [
@@ -38,6 +38,6 @@
     "colors": "^0.6.2",
     "grunt-markdown": "^0.5.0"
   },
-  "homepage": "https://github.com/AndyGrom/node-queue",
+  "homepage": "https://github.com/AndyGrom/node-message-queue",
   "scripts": {}
 }
