@@ -64,10 +64,10 @@ var serverBridge = new SocketIoBridgeServer(port, function() {
 var server = new QueueServer( { serverBridge : serverBridge } );
 ```
 
-client:
+client (same as above):
 
 ```javascript
-var Queue = require('../lib/net/queue.client.js');
+var Queue = require('node-queue-lib');
 
 var url = 'http://localhost';
 
