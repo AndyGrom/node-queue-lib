@@ -38,9 +38,8 @@ var queueNum = 0;
 describe('Queue core test', function () {
     runTestCase(function (strategy) {
         var name = 'queue' + queueNum++;
-        var storage = new QueueStorage(name);
 
-        var queue = new Queue(name, strategy, storage);
+        var queue = new Queue(name, strategy);
         return {
             client : queue,
             server : queue

@@ -1,7 +1,7 @@
 {
   "name": "node-queue-lib",
   "description": "Javascript implementation of message queue with various delivery strategy",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "author": "Gromozdov Andrey Alexandrovich",
   "main": "lib/queue.client.js",
   "repository": {

@@ -21,19 +21,18 @@ Simple Usages
 -------------
 
 ```javascript
-var Queue = require('node-queue-lib');
+var Queue = require('node-queue-lib/lib/queue.core');
 
-var url = 'http://localhost';
-
-// create queue instance
-var queue = new Queue( url, 'test-queue', 'broadcast' );
+var queue = new Queue('Queue name', 'broadcast');
 
 // subscribe on 'Queue name' messages
 queue.subscribe(function (err, subscriber) {
+    subscriber.on('error', function(err){
+        //
+    });
     subscriber.on('data', function (data, accept) {
         console.log(data);
         accept(); // accept process message
-        queue.close();
     });
 });
 
@@ -64,7 +63,7 @@ var serverBridge = new SocketIoBridgeServer(port, function() {
 var server = new QueueServer( { serverBridge : serverBridge } );
 ```
 
-client (same as above):
+client:
 
 ```javascript
 var Queue = require('node-queue-lib');
@@ -76,6 +75,9 @@ var queue = new Queue( url, 'test-queue', 'broadcast' );
 
 // subscribe on 'Queue name' messages
 queue.subscribe(function (subscriber) {
+    subscriber.on('error', function(err){
+        //
+    });
 	subscriber.on('data', function (data, accept) {
 		console.log(data);
 		accept(); // accept process message
@@ -110,6 +112,9 @@ client:
 
             // subscribe on 'Queue name' messages
             queue.subscribe(function (err, subscriber) {
+                subscriber.on('error', function(err){
+                    //
+                });
                 subscriber.on('data', function (data, accept) {
                     document.write(data);
                     accept(); // accept process message
