@@ -1,3 +1,9 @@
+/**
+ * node-queue-lib
+ * Copyright(c) 2014 year Andrey Gromozdov
+ * License: MIT
+ */
+
 var Queue = require('node-queue-lib/queue.core');
 
 var queue = new Queue('Queue name', 'broadcast');

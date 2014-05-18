@@ -18,7 +18,7 @@
     "message", "queue"
   ],
   "dependencies": {
-    "node-queue-lib": "^0.0.10"
+    "node-queue-lib": "*"
   },
   "engines": {
     "node": ">= 0.10.0"

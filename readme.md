@@ -136,6 +136,39 @@ client:
 </html>
 ```
 
+Review examples
+---------------
+
+```bash
+npm install node-queue-lib
+cd ./node_modules/node-queue-lib/examples
+npm install
+```
+
+run core test:
+```bash
+node core.js
+```
+
+run client-server test:
+```bash
+node server.js
+```
+```bash
+node client.js
+```
+
+For run browser test locate you browser to http://localhost:8888
+
+Run tests
+---------
+
+For run tests you must have installed [grunt](http://gruntjs.com/).
+
+```bash
+grunt test
+```
+
 License
 -------
 The MIT License

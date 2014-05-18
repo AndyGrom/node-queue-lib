@@ -1,6 +1,12 @@
+/**
+ * node-queue-lib
+ * Copyright(c) 2014 year Andrey Gromozdov
+ * License: MIT
+ */
+
 var Queue = require('node-queue-lib');
 
-var url = 'http://localhost';
+var url = 'http://localhost:8888';
 
 // create queue instance
 var queue = new Queue( url, 'test-queue', 'broadcast' );

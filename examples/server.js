@@ -9,7 +9,7 @@ var http = require('http');
 var QueueServer = require('node-queue-lib/lib/core/node-queue-server');
 
 // TCP port for incoming connections
-var port = 80;
+var port = 8888;
 
 // Create Socket.IO transport bridge
 var serverBridge = new SocketIoBridgeServer(port, function() {
