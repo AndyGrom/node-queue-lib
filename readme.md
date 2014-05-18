@@ -20,6 +20,7 @@ npm install node-queue-lib
 Simple Usages
 -------------
 
+[see example](https://github.com/AndyGrom/node-message-queue/blob/master/examples/core.js)
 ```javascript
 var Queue = require('node-queue-lib/lib/queue.core');
 
@@ -45,6 +46,7 @@ Inter process usages
 
 server message queue:
 
+[see example](https://github.com/AndyGrom/node-message-queue/blob/master/examples/server.js)
 ```javascript
 var SocketIoBridgeServer = require('node-queue-lib/lib/net/socket-io-bridge-server');
 var http = require('http');
@@ -63,8 +65,9 @@ var serverBridge = new SocketIoBridgeServer(port, function() {
 var server = new QueueServer( { serverBridge : serverBridge } );
 ```
 
-client:
 
+client:
+[see example](https://github.com/AndyGrom/node-message-queue/blob/master/examples/client.js)
 ```javascript
 var Queue = require('node-queue-lib');
 
@@ -94,7 +97,7 @@ Inter platform usages
 The server code is the same as above.
 
 client:
-
+[see example](https://github.com/AndyGrom/node-message-queue/blob/master/examples/client.html)
 ```html
 <!DOCTYPE html>
 <html>

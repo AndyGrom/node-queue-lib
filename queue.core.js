@@ -4,4 +4,4 @@
  * License: MIT
  */
 
-module.exports = require('./core/queue-core');
+module.exports = require('./lib/core/queue-core');

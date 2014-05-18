@@ -4,9 +4,9 @@
  * License: MIT
  */
 
-var SocketIoBridgeServer = require('../lib/net/socket-io-bridge-server');
+var SocketIoBridgeServer = require('node-queue-lib/lib/net/socket-io-bridge-server');
 var http = require('http');
-var QueueServer = require('../lib/core/node-queue-server');
+var QueueServer = require('node-queue-lib/lib/core/node-queue-server');
 
 // TCP port for incoming connections
 var port = 80;

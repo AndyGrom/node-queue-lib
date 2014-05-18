@@ -1,10 +1,4 @@
-/**
- * node-queue-lib
- * Copyright(c) 2014 year Andrey Gromozdov
- * License: MIT
- */
-
-var Queue = require('../lib/queue.client.js');
+var Queue = require('node-queue-lib');
 
 var url = 'http://localhost';
 
