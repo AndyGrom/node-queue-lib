@@ -121,7 +121,6 @@ client:
                 subscriber.on('data', function (data, accept) {
                     document.write(data);
                     accept(); // accept process message
-                    queue.close();
                 });
             });
 
