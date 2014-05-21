@@ -84,7 +84,6 @@ queue.subscribe(function (subscriber) {
 	subscriber.on('data', function (data, accept) {
 		console.log(data);
 		accept(); // accept process message
-		queue.close();
 	});
 });
 
