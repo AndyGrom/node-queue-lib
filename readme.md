@@ -140,7 +140,6 @@ Review examples
 ```bash
 npm install node-queue-lib
 cd ./node_modules/node-queue-lib/examples
-npm install
 ```
 
 run core test:
