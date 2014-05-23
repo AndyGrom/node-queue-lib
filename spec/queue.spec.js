@@ -12,7 +12,6 @@ var QueueClient = require('../lib/core/node-queue-client');
 var MemoryBridge = require('../lib/net/memory-bridge');
 var SocketIoBridgeClient = require('../lib/net/socket-io-bridge-client');
 var SocketIoBridgeServer = require('../lib/net/socket-io-bridge-server');
-var QueueStorage = require('../lib/core/memory-storage');
 var http = require('http');
 
 var testCase = require('./queue.case.js');

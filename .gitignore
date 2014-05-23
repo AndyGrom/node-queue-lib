@@ -242,3 +242,4 @@ coverage
 .idea
 .grunt
 examples/node_modules
+examples/performance

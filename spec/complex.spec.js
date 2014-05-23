@@ -38,14 +38,15 @@ describe('multiple connections simulation', function(){
         utils.asyncLoop(function(index, next) {
             if (index < 3) {
                 var queue = new QueueClient( settings );
+
                 queue.subscribe(function (err, subscriber) {
                     subscriber.on('data', function (data, accept) {
                         expect(data).toBe('test');
                         accept();
-                        queue.close();
                         next();
                     });
                 });
+
                 queue.publish('test');
             } else {
                 done();

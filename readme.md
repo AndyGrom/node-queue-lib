@@ -49,8 +49,8 @@ server message queue:
 [see example](https://github.com/AndyGrom/node-message-queue/blob/master/examples/server.js)
 ```javascript
 var SocketIoBridgeServer = require('node-queue-lib/lib/net/socket-io-bridge-server');
-var http = require('http');
 var QueueServer = require('node-queue-lib/lib/core/node-queue-server');
+var http = require('http');
 
 // TCP port for incoming connections
 var port = 80;

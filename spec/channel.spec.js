@@ -113,9 +113,9 @@ function testCase(getBridge, description) {
             }
         });
 
-        it('client must receive error after channel close', function(done){
-            server.on('subscribe', function(obj, channel, acceptCallback){
-                acceptCallback(null, null, function(){
+        it('client must receive error after channel close', function(done) {
+            server.on('subscribe', function(obj, channel, acceptCallback) {
+                acceptCallback(null, null, function() {
                     channel.close(function(){});
                 });
             });
