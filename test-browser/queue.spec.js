@@ -19,6 +19,6 @@ var url = "http://localhost:8888";
 testCase(function(strategy, callback){
     var name = 'queue' + queueNum++;
     queue = { client : new Queue(url, name, strategy) };
-    callback(queue);
+    callback(queue.client);
 });
 

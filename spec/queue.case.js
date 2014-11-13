@@ -15,18 +15,18 @@ module.exports = function(createContext) {
             createContext(strategy, function(queue) {
                 var data = 1;
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber.on('data', function (obj, accept) {
                         expect(obj).toBe(data);
                         accept && accept(null, true, function(){
-                            queue.client.count(function (err, length) {
+                            queue.count(function (err, length) {
                                 expect(length).toBe(0);
                                 done();
                             });
                         });
                     });
                 });
-                queue.client.publish(data);
+                queue.publish(data);
             });
         });
 
@@ -56,13 +56,13 @@ module.exports = function(createContext) {
 
                 spyOn(subscribers, 'subscriber').andCallThrough();
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     queueSubscriber = subscriber;
                     subscriber.on('data', subscribers.subscriber);
                 });
 
                 data.forEach(function (item) {
-                    queue.client.publish(item);
+                    queue.publish(item);
                 });
             });
         });
@@ -83,11 +83,11 @@ module.exports = function(createContext) {
                 });
 
                 var onSubscribe = utils.after(2, function () {
-                    queue.client.publish(1);
-                    queue.client.publish(2);
+                    queue.publish(1);
+                    queue.publish(2);
                 });
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber.on('data', function (data, acceptCallback) {
                         subscriber1Called();
                         acceptCallback(true);
@@ -95,7 +95,7 @@ module.exports = function(createContext) {
                     onSubscribe();
                 });
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber.on('data', function (data, acceptCallback) {
                         subscriber2Called();
                         acceptCallback(true);
@@ -133,16 +133,16 @@ module.exports = function(createContext) {
                 spyOn(subscribers, "subscriber1").andCallThrough();
                 spyOn(subscribers, "subscriber2").andCallThrough();
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber1 = subscriber;
                     subscriber.on('data', subscribers.subscriber1);
 
-                    queue.client.subscribe(function (err, subscriber) {
+                    queue.subscribe(function (err, subscriber) {
                         subscriber2 = subscriber;
                         subscriber.on('data', subscribers.subscriber2);
 
                         for (var i = 0; i < publishCount; i++) {
-                            queue.client.publish(1);
+                            queue.publish(1);
                         }
                     });
                 });
@@ -154,8 +154,8 @@ module.exports = function(createContext) {
             createContext(strategy, function(queue) {
 
                 var data = 1;
-                queue.client.publish(data, function () {
-                    queue.client.subscribe(function (err, subscriber) {
+                queue.publish(data, function () {
+                    queue.subscribe(function (err, subscriber) {
                         subscriber.on('data', function (response) {
                             expect(response).toBe(data);
                             done();
@@ -172,11 +172,11 @@ module.exports = function(createContext) {
         it('1 publish 1 subscriber', function (done) {
             createContext(strategy, function(queue) {
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber.on('data', function (data, accept) {
                         expect(data).toBe(1);
                         accept && accept(null, true, function(){
-                            queue.client.count(function (err, length) {
+                            queue.count(function (err, length) {
                                 expect(length).toBe(0);
                                 done();
                             });
@@ -184,7 +184,7 @@ module.exports = function(createContext) {
                     });
                 });
 
-                queue.client.publish(1);
+                queue.publish(1);
             });
         });
 
@@ -195,16 +195,16 @@ module.exports = function(createContext) {
                     done();
                 });
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber.on('data', function(data, accept){
                         accept();
                         onData();
                     });
                 });
 
-                queue.client.publish(1);
-                queue.client.publish(1);
-                queue.client.publish(1);
+                queue.publish(1);
+                queue.publish(1);
+                queue.publish(1);
             });
         });
 
@@ -238,18 +238,18 @@ module.exports = function(createContext) {
                 spyOn(subscribers, "subscriber2").andCallThrough();
                 spyOn(subscribers, "subscriber3").andCallThrough();
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber.on('data', subscribers.subscriber1);
 
-                    queue.client.subscribe(function (err, subscriber) {
+                    queue.subscribe(function (err, subscriber) {
                         subscriber.on('data', subscribers.subscriber2);
 
-                        queue.client.subscribe(function (err, subscriber) {
+                        queue.subscribe(function (err, subscriber) {
                             subscriber.on('data', subscribers.subscriber3);
 
-                            queue.client.publish(1);
-                            queue.client.publish(2);
-                            queue.client.publish(3);
+                            queue.publish(1);
+                            queue.publish(2);
+                            queue.publish(3);
 
                         });
                     });
@@ -283,18 +283,18 @@ module.exports = function(createContext) {
                 spyOn(subscribers, "subscriber1").andCallThrough();
                 spyOn(subscribers, "subscriber2").andCallThrough();
 
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber1 = subscriber;
                     subscriber.on('data', subscribers.subscriber1);
                 });
-                queue.client.subscribe(function (err, subscriber) {
+                queue.subscribe(function (err, subscriber) {
                     subscriber2 = subscriber;
                     subscriber.on('data', subscribers.subscriber2);
                 });
 
-                queue.client.publish(1);
-                queue.client.publish(1);
-                queue.client.publish(1);
+                queue.publish(1);
+                queue.publish(1);
+                queue.publish(1);
             });
         });
 
@@ -302,8 +302,8 @@ module.exports = function(createContext) {
             createContext(strategy, function(queue) {
 
                 var data = 1;
-                queue.client.publish(data, function () {
-                    queue.client.subscribe(function (err, subscriber) {
+                queue.publish(data, function () {
+                    queue.subscribe(function (err, subscriber) {
                         subscriber.on('data', function (response) {
                             expect(response).toBe(data);
                             done();

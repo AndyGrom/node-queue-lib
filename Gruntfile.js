@@ -26,9 +26,6 @@ module.exports = function(grunt) {
             },
             options: {
                 forceExit: true,
-                match: '.',
-                matchall: false,
-                extensions: 'js',
                 specFolders : ['./spec/']
             },
             all: ['spec/']

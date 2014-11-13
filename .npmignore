@@ -11,3 +11,4 @@ coverage
 .grunt
 examples/node_modules
 examples/performance
+doc

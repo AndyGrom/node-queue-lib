@@ -26,9 +26,9 @@ function runTestCase(createQueueFunction) {
         });
     });
 
-    testCase(function(strategy, callback){
+    testCase(function(strategy, onCreateQueue) {
         queue = createQueueFunction(strategy);
-        callback(queue);
+        onCreateQueue(queue.client);
     });
 }
 

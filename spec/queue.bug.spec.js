@@ -45,7 +45,7 @@ describe('tests for fault tolerance', function(){
 });
 
 function createContext(done, callback) {
-    var port = 8888;
+    var port = 8887;
     var serverBridge = new SocketIoBridgeServer(port, function() {
         return http.createServer();
     });
